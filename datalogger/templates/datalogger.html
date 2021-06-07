@@ -1,0 +1,247 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="refresh" content="10">
+    <meta name="description" content="">
+	<!-- Navbar -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!-- Datepicker Theme -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+		<style>
+		.site-navbar {
+		margin-bottom: 0px;
+		z-index: 1999;
+		position: absolute;
+		top: 2rem;
+		width: 100%; 
+		}
+		.site-navbar.transparent {
+		background: transparent; 
+		}
+  		.site-navbar.absolute {
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%; 
+		}
+		.site-navbar .site-logo {
+		position: relative;
+		left: 0;
+		font-size: 24px !important; 
+		}
+  		.site-navbar .site-navigation .site-menu {
+    	margin-bottom: 0; 
+		}
+    	.site-navbar .site-navigation .site-menu .active > a span {
+      	background: #007bff;
+      	color: rgb(255, 255, 255);
+      	border-radius: 30px;
+      	display: inline-block;
+      	padding: 5px 20px; 
+		}
+    	.site-navbar .site-navigation .site-menu a {
+      	text-decoration: none !important;
+      	display: inline-block; }
+    	.site-navbar .site-navigation .site-menu > li {
+      	display: inline-block; }
+      	.site-navbar .site-navigation .site-menu > li > a {
+        padding: 10px 0px;
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        text-decoration: none !important; }
+        .site-navbar .site-navigation .site-menu > li > a > span {
+          padding: 5px 20px;
+          display: inline-block;
+          -webkit-transition: .3s all ease;
+          -o-transition: .3s all ease;
+          transition: .3s all ease;
+          border-radius: 30px; }
+        .site-navbar .site-navigation .site-menu > li > a:hover > span {
+          background: #007bff;
+          color: rgb(255, 255, 255);
+          border-radius: 30px;
+          display: inline-block; }
+		td, th 
+		{
+	  		text-align: center;
+		}
+		</style>
+	<!-- <style>
+		table, td, th 
+		{
+			border: 1px solid black;
+		}
+		table 
+		{
+	 		border-collapse: collapse;
+	  		width: 100%;
+		}
+		td 
+		{
+	  		text-align: center;
+		}
+	</style> -->
+	<title>Data Logger</title>
+</head>
+<body>
+	<!-- Navbar - old -->
+	<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+		<div class="container">
+			  
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+		  <div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+			  <li class="nav-item">
+				<a class="nav-link" href="/">Home</a>
+			  </li>
+			  <li class="nav-item active">
+				<a class="nav-link" href="/datalogger/">Data Logger
+					<span class="sr-only">(current)</span>
+				</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="/register/">Register</a>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+	  </nav> -->
+
+	  <!-- Navbar - new -->
+	  <header class="site-navbar" role="banner">
+		<div class="container">
+		  <div class="row align-items-center">
+			<div class="col-12 col-md-11 d-none d-xl-block">
+			  <nav class="site-navigation position-relative text-center" role="navigation">
+  
+				<ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+				  <li><a href="/"><span>Home</span></a></li>
+				  <li class="active"><a href="/datalogger/"><span>Data Logger</span></a></li>
+				  <li><a href="/register/"><span>Register</span></a></li>
+				</ul>
+			  </nav>
+		    </div>
+		  </div>
+		</div>
+	<hr>
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<!-- Export to excel -->
+	<div style="text-align: right; margin-right: 2%;" class="container">
+		<input type="button" class="btn btn-primary" id="btnExport" value="Export to Excel" onclick="Export()" />
+	</div>
+	<script src="https://cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+	<script type="text/javascript">
+        function Export() {
+            $("#vehicleTable").table2excel({
+                filename: "vehicle.xls"
+            });
+        }
+    </script>
+	<!-- Filter -->
+	<form method="get">
+	<div class="row">
+		<div class="form-group col-sm-4 col-md-3" style="margin-left: 2%">
+			{{ vehicleFilter.form.vehicleDetails.label_tag }}
+			{% render_field vehicleFilter.form.vehicleDetails class="form-control" %}
+		</div>
+		<div class="form-group col-sm-4 col-md-3">
+			{{ vehicleFilter.form.start_date.label_tag }}
+			{% render_field vehicleFilter.form.start_date class="form-control" id="datepicker" %}
+		</div>
+		<div class="form-group col-sm-4 col-md-3">
+			{{ vehicleFilter.form.end_date.label_tag }}
+			{% render_field vehicleFilter.form.end_date class="form-control" id="datepicker1" %}
+		</div> 
+		<div class="form-group col-sm-8 col-md-3">
+			<button type="submit" class="btn btn-primary" style="margin-left: 8%">
+			  <span class="glyphicon glyphicon-search"></span> Search
+			</button>
+		</div>
+	</div>
+	</form>
+	<br>
+	
+	<!-- Tabular Display -->
+	<table id="vehicleTable" class="table">
+	  	<tr>
+	    	<th>Vehicle Reg. No.</th>
+	    	<th>Date</th>
+	    	<th>Time</th>
+	    	<th>Voltage</th>
+	    	<th>SOC</th>
+	    	<th>Temperature</th>
+	    	<th>Latitude</th>
+	    	<th>Latitude<br>Direction</th>
+	    	<th>Longitude</th>
+	    	<th>Longitude<br>Direction</th>
+	  	</tr>
+	  	
+	  	{% for item in vehicleItems %}
+	  	<tr>
+	    	<td>{{ item.vehicleDetails }}</td>
+	    	<td>{{ item.date }}</td>
+	    	<td>{{ item.time }}</td>
+	    	<td>{{ item.batteryVoltage }}</td>
+	    	<td>{{ item.soc }}</td>
+	    	<td>{{ item.temp }}</td>
+	    	<td>{{ item.latitude }}</td>
+	    	<td>{{ item.latitudeDirection }}</td>
+	    	<td>{{ item.longitude }}</td>
+	    	<td>{{ item.longitudeDirection }}</td>
+	  	</tr>
+	  	{% endfor %}
+	</table>
+	<br><br><br>
+	<!-- <input type="button" id="btnUpdate" value="Update" />
+	<script type="text/javascript">
+		$('#btnUpdate').on('click', function(e) {
+			$.ajax({
+				url : 'http://127.0.0.1:8000/listvehicles/',
+				type : 'GET',
+				dataType : 'json',
+				success : function(data) {
+					console.log(data)
+					$("#vehicleTable").find("tr:gt(0)").remove(); 
+					for(var i = data.length-1; i >= 0; i--) {
+					$('#vehicleTable').append("<tr><td>" + data[i].vehicleDetails + "</td><td>" + data[i].date + "</td><td>" + data[i].time + "</td><td>" + data[i].batteryVoltage + "</td><td>" + data[i].soc + "</td><td>" + data[i].temp + "</td><td>" + data[i].latitude + "</td><td>" + data[i].latitudeDirection + "</td><td>" + data[i].longitude + "</td><td>" + data[i].longitudeDirection + "</td></tr>");
+					}
+				},
+				error : function() {
+					console.log('error');
+				}
+			});
+		});
+		</script> -->
+	<!-- Ajax -->
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+	<!-- DatePicker  -->
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+		$( function() {
+		$( "#datepicker" ).datepicker({ dateFormat: 'dd-mm-yy' });
+		} );
+	</script>
+	<script>
+		$( function() {
+		  $( "#datepicker1" ).datepicker({ dateFormat: 'dd-mm-yy' });
+		} );
+	</script>
+	<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
